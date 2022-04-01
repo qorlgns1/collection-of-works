@@ -1,0 +1,73 @@
+h1,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ul {
+  list-style-type: none;
+}
+
+body {
+  background-color: #ddd;
+}
+
+.wrapper {
+  width: 500px;
+  margin: 50px auto;
+}
+
+.sample-image a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.bucket-list {
+  background-color: rgb(242, 242, 242);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 0 0.1px gray;
+}
+
+.bucket-list header {
+  background-color: white;
+  padding: 25px 0px;
+  border-bottom: 3px solid rgb(233, 233, 233);
+}
+
+.bucket-list h1 {
+  font-size: 25px;
+  font-weight: bold;
+  padding-left: 20px;
+  border-left: 10px solid rgb(251, 0, 129);
+  color: rgb(251, 0, 129);
+}
+
+.contents {
+  padding: 30px;
+}
+
+.list-item li {
+  background-color: white;
+  padding: 10px;
+  border: 3px solid rgb(235, 235, 235);
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+.list-item li:last-child {
+  margin-bottom: 0;
+}
+
+.list-item li:hover {
+  border: 3px solid rgb(26, 121, 255);
+  color: rgb(26, 121, 255);
+}
