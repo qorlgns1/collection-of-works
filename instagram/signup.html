@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입</title>
+    <link rel="stylesheet" href="./css/signup.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <section class="login-container">
+        <h1>Instagram</h1>
+        <h2>친구들의 사진과 동영상을 보려면 가입하세요.</h2>
+        <a class="facebook-login" href="https://www.facebook.com">
+          Facebook으로 로그인
+        </a>
+        <span class="or-txt">또는</span>
+        <form class="user-info" action="" method="post">
+          <fieldset>
+            <legend>회원가입 정보</legend>
+            <label for="userId"></label>
+            <input
+              type="text"
+              placeholder="휴대폰 번호 또는 이메일 주소"
+              id="userId"
+              name="userId"
+              required
+              autofocus
+            />
+            <label for="fullName"></label>
+            <input
+              type="text"
+              placeholder="성명"
+              id="fullName"
+              name="fullName"
+              required
+              autofocus
+            />
+            <label for="userName"></label>
+            <input
+              type="text"
+              placeholder="사용자 이름"
+              id="userName"
+              name="userName"
+              required
+              autofocus
+            />
+            <label for="userPw"></label>
+            <input
+              type="password"
+              id="userPw"
+              name="userPw"
+              placeholder="비밀번호"
+              required
+            />
+            <button class="login-btn" type="submit">가입</button>
+          </fieldset>
+        </form>
+      </section>
+      <section class="signup-container">
+        <p>계정이 있으신가요?</p>
+        <a href="./login.html">로그인</a>
+      </section>
+      <section class="download-container">
+        <p>앱을 다운로드하세요</p>
+        <ul class="app-download">
+          <li>
+            <a
+              href="https://itunes.apple.com/app/instagram/id389801252?pt=428156&ct=igweb.loginPage.badge&mt=8&vt=lo"
+              >Appstore에서 다운로드 하기</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3D89E35926-26DA-4500-907C-D234E18575AF%26utm_content%3Dlo%26utm_medium%3Dbadge"
+              >GooglePlay에서 다운로드하기</a
+            >
+          </li>
+        </ul>
+      </section>
+    </div>
+  </body>
+</html>
