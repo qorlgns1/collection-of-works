@@ -2,42 +2,62 @@ const loginForm = document.querySelector(".user-info");
 const loginBtn = document.querySelector(".login-btn");
 const userId = document.getElementById("userId");
 const userPw = document.getElementById("userPw");
+const userInfo = [userId, userPw];
 
-const checkLogin = (info) => {
-  if (!info.value) {
-    info.classList.add("placeholder-color-red");
-    return false;
-  } else {
-    info.classList.remove("placeholder-color-red");
-    return true;
-  }
+const checkLogin = (userInfo) => {
+  let flag = true;
+
+  userInfo.forEach((info) => {
+    if (!info.value) {
+      info.classList.add("placeholder-color-red");
+      flag = false;
+    } else {
+      info.classList.remove("placeholder-color-red");
+    }
+  });
+
+  return flag;
+};
+
+const validInfoCheck = (userInfo) => {
+  let flag = true;
+
+  userInfo.forEach((info) => {
+    if (!info.value) {
+      flag = false;
+    }
+  });
+
+  return flag;
 };
 
 const activeBtn = (userInfo) => {
-  userInfo[0].addEventListener("keyup", (e) => {
-    if (e.target.value && userInfo[1].value) {
-      loginBtn.classList.add("btn-active");
-    } else {
-      loginBtn.classList.remove("btn-active");
-    }
+  userInfo.forEach((info) => {
+    info.addEventListener("keyup", (e) => {
+      if (e.target.value && validInfoCheck(userInfo)) {
+        loginBtn.classList.add("btn-active");
+      } else {
+        loginBtn.classList.remove("btn-active");
+      }
+    });
   });
 };
 
-const resetUserInfo = (id, pw) => {
-  id.value = "";
-  pw.value = "";
+const resetUserInfo = (userInfo) => {
+  userInfo.forEach((info) => {
+    info.value = "";
+  });
   loginBtn.classList.remove("btn-active");
 };
 
-activeBtn([userId, userPw]);
-activeBtn([userPw, userId]);
+activeBtn(userInfo);
 
 loginBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
-  if (checkLogin(userId) && checkLogin(userPw)) {
+  if (checkLogin(userInfo)) {
     alert("로그인 성공");
-    resetUserInfo(userId, userPw);
+    resetUserInfo(userInfo);
   } else {
     alert("로그인 실패");
   }
