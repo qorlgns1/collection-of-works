@@ -58,9 +58,9 @@ loginBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
   if (checkLogin(userInfo)) {
-    alert("로그인 성공");
+    alert("회원가입 성공");
     resetUserInfo(userInfo);
   } else {
-    alert("로그인 실패");
+    alert("회원가입 실패");
   }
 });
