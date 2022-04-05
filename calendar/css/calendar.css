@@ -1,0 +1,66 @@
+@import url(../../common/css/reset.css);
+
+.wrapper {
+  width: 885px;
+  padding: 30px;
+  margin: 0 auto;
+}
+
+.header {
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.header > h1 {
+  visibility: hidden;
+  position: absolute;
+  top: -1000px;
+  left: -1000px;
+}
+
+.header > h2 {
+  font-size: 170px;
+  font-weight: bolder;
+  color: #bf1e2e;
+  float: left;
+}
+
+.header > .paragraph {
+  float: right;
+  padding-top: 90px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #d9d9d9;
+}
+
+.write-ko {
+  text-align: right;
+}
+
+table {
+  display: inline-block;
+  margin-right: 15px;
+  width: 282px;
+}
+
+table:nth-of-type(3n) {
+  margin-right: 0px;
+}
+
+caption {
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+table tr > *:first-child {
+  color: red;
+}
+
+th,
+td {
+  padding: 5px;
+}
+
+th {
+  font-weight: bold;
+}
