@@ -1,0 +1,76 @@
+@import url(../../common/css/reset.css);
+
+body {
+  background-color: black;
+}
+
+.wrapper {
+  background-color: #efebf9;
+  width: 700px;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+.header {
+  padding: 30px 25px 20px;
+  border: 1px solid #e2e3e9;
+  border-radius: 10px;
+  position: relative;
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+.header h1::before {
+  content: "";
+  width: 700px;
+  height: 10px;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  background-color: #6a3eb9;
+  border-radius: 20px 20px 0 0;
+}
+
+.header h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.research-subject::after {
+  content: "";
+  width: 700px;
+  height: 10px;
+  position: relative;
+  display: block;
+  top: 0;
+  left: -26px;
+  padding-top: 5px;
+  border-bottom: 1px solid #e2e3e9;
+  margin-bottom: 20px;
+}
+
+.id-section p {
+  font-weight: bold;
+  display: inline-block;
+}
+
+.id-section span {
+  font-weight: normal;
+}
+
+.id-section a {
+  text-decoration: none;
+}
+
+.research fieldset {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 25px;
+  background-color: white;
+}
+
+.research fieldset > legend {
+  text-indent: -99999px;
+}
