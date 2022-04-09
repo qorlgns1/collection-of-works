@@ -1,4 +1,4 @@
-import { makeKoreaUnit, attachNode } from "../text/changeText.js";
+import { makeKoreaUnit, attachNode } from "../common/changeText.js";
 
 const insertBtn = document.querySelector(".insert-money-btn");
 
