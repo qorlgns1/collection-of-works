@@ -1,14 +1,5 @@
 import { makeKoreaUnit, attachNode } from "../common/changeText.js";
-
-export const depositCheck = () => {
-  const leftMoneyNode = document.querySelector(".my-left-money").children[1];
-  const leftMoney = Number(leftMoneyNode.innerHTML.split(" ")[0]);
-  if (!leftMoney) {
-    return 0;
-  } else {
-    return Number(leftMoney);
-  }
-};
+import { getLocalStorageMoney } from "../common/localstorage.js";
 
 export const getLeftMoneyNode = () => {
   const leftMoneyNode = document.querySelector(".my-left-money").children[1];
@@ -18,7 +9,11 @@ export const getLeftMoneyNode = () => {
 export const getLeftMoney = () => {
   const leftMoneyNode = getLeftMoneyNode();
   const leftMoney = leftMoneyNode.innerHTML.split(" ")[0];
-  return Number(leftMoney);
+  if (!leftMoney) {
+    return 0;
+  } else {
+    return Number(leftMoney);
+  }
 };
 
 export const getMyMoneyNode = () => {
@@ -39,7 +34,7 @@ export const depositMoney = () => {
     if (!leftMoney) {
       alert("잔액을 확인해주세요.");
     } else {
-      const myMoney = Number(localStorage.getItem("money"));
+      const myMoney = getLocalStorageMoney();
       localStorage.setItem("money", myMoney + leftMoney);
 
       const myMoneyNode = getMyMoneyNode();

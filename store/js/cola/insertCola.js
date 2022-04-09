@@ -1,5 +1,5 @@
-import { depositCheck, depositSubtract } from "../money/depositMoney.js";
-import { checkColaName, checkColaPrice, checkColaCount } from "./checkCola.js";
+import { getLeftMoney, depositSubtract } from "../money/depositMoney.js";
+import { getColaName, getColaPrice, getColaCount } from "./checkCola.js";
 import { copyDisplayColaBtn } from "../component/colaButton.js";
 
 // export const subtractDeposit = () => {
@@ -15,20 +15,18 @@ export const insertCola = () => {
 
   cola.forEach((colaBtn) => {
     colaBtn.addEventListener("click", (e) => {
-      const deposit = depositCheck();
+      const deposit = getLeftMoney();
 
       if (deposit < 1000) {
         alert("잔액을 확인해주세요.");
       } else {
-        depositSubtract(checkColaPrice(colaBtn));
-
         let display = document.querySelector(".display");
 
-        const colaName = colaBtn.children[1].innerHTML;
+        const colaName = getColaName(colaBtn);
         let flag = false;
         Array.from(display.children).forEach((displayBtn) => {
-          if (checkColaName(displayBtn) === colaName) {
-            displayBtn.children[2].innerHTML = checkColaCount(displayBtn) + 1;
+          if (getColaName(displayBtn) === colaName) {
+            displayBtn.children[2].innerHTML = getColaCount(displayBtn) + 1;
             flag = true;
           }
         });
@@ -37,6 +35,8 @@ export const insertCola = () => {
           const displayColaBtn = copyDisplayColaBtn(colaBtn);
           display.append(displayColaBtn);
         }
+
+        depositSubtract(getColaPrice(colaBtn));
       }
     });
   });

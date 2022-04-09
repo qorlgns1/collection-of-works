@@ -1,14 +1,14 @@
 import { makeKoreaUnit, attachNode } from "../common/changeText.js";
+import { getLocalStorageMoney } from "../common/localstorage.js";
+import { getMyMoneyNode } from "./depositMoney.js";
 
 export const firstVisitChargeMoney = () => {
-  const myMoneyNode = document.querySelector(".my-money").children[1];
+  const myMoneyNode = getMyMoneyNode();
 
-  let money = parseInt(localStorage.getItem("money"));
-  if (!money) {
+  if (!getLocalStorageMoney()) {
     localStorage.setItem("money", 10000);
-    money = parseInt(localStorage.getItem("money"));
-    attachNode(myMoneyNode, makeKoreaUnit(money));
+    attachNode(myMoneyNode, makeKoreaUnit(getLocalStorageMoney()));
   } else {
-    attachNode(myMoneyNode, makeKoreaUnit(money));
+    attachNode(myMoneyNode, makeKoreaUnit(getLocalStorageMoney()));
   }
 };

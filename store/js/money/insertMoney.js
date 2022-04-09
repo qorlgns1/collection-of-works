@@ -1,5 +1,6 @@
 import { makeKoreaUnit, attachNode } from "../common/changeText.js";
-
+import { getLocalStorageMoney } from "../common/localstorage.js";
+import { getMyMoneyNode } from "./depositMoney.js";
 const insertBtn = document.querySelector(".insert-money-btn");
 
 const leftMoneyChange = (insertMoney) => {
@@ -13,7 +14,7 @@ export const insertMoney = () => {
   insertBtn.addEventListener("click", () => {
     let insertMoneyInput = document.querySelector(".insert-money-input");
     let insertMoneyValue = insertMoneyInput.value;
-    const myMoney = Number(localStorage.getItem("money"));
+    const myMoney = getLocalStorageMoney();
 
     if (!insertMoneyValue) {
       alert("입금액을 입력해주세요.");
@@ -26,7 +27,7 @@ export const insertMoney = () => {
         const totalLeftMoney = myMoney - insertMoneyValue;
         localStorage.setItem("money", totalLeftMoney);
 
-        const myMoneyNode = document.querySelector(".my-money").children[1];
+        const myMoneyNode = getMyMoneyNode();
         attachNode(myMoneyNode, makeKoreaUnit(totalLeftMoney));
 
         leftMoneyChange(insertMoneyValue);
