@@ -1,6 +1,7 @@
 import { getLeftMoney, depositSubtract } from "../money/depositMoney.js";
 import { getColaName, getColaPrice, getColaCount } from "./checkCola.js";
 import { copyDisplayColaBtn } from "../component/colaButton.js";
+import { getMiniDisplay } from "../display/miniDisplay.js";
 
 // export const subtractDeposit = () => {
 //   콜라의 가격을 가지고 온다.
@@ -20,11 +21,11 @@ export const insertCola = () => {
       if (deposit < 1000) {
         alert("잔액을 확인해주세요.");
       } else {
-        let display = document.querySelector(".display");
+        let miniDisplay = getMiniDisplay();
 
         const colaName = getColaName(colaBtn);
         let flag = false;
-        Array.from(display.children).forEach((displayBtn) => {
+        Array.from(miniDisplay.children).forEach((displayBtn) => {
           if (getColaName(displayBtn) === colaName) {
             displayBtn.children[2].innerHTML = getColaCount(displayBtn) + 1;
             flag = true;
@@ -33,7 +34,7 @@ export const insertCola = () => {
 
         if (!flag) {
           const displayColaBtn = copyDisplayColaBtn(colaBtn);
-          display.append(displayColaBtn);
+          miniDisplay.append(displayColaBtn);
         }
 
         depositSubtract(getColaPrice(colaBtn));
