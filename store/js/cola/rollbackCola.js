@@ -1,5 +1,5 @@
 import { getLocalStorageMoney } from "../common/localstorage.js";
-import { getMiniDisplay } from "../display/minidisplay.js";
+import { getMiniDisplay } from "../display/miniDisplay.js";
 import { depositAdd } from "../money/depositMoney.js";
 import { getColaCount, getColaName, getColaPriceByName } from "./checkCola.js";
 
