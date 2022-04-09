@@ -21,6 +21,11 @@ export const getMyMoneyNode = () => {
   return myMoneyNode;
 };
 
+export const depositAdd = (colaPrice) => {
+  const leftMoneyNode = getLeftMoneyNode();
+  leftMoneyNode.innerHTML = getLeftMoney() + Number(colaPrice) + " 원";
+};
+
 export const depositSubtract = (colaPrice) => {
   const leftMoneyNode = getLeftMoneyNode();
   leftMoneyNode.innerHTML = getLeftMoney() - Number(colaPrice) + " 원";
