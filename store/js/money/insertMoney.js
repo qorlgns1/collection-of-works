@@ -11,26 +11,26 @@ const leftMoneyChange = (insertMoney) => {
 
 export const insertMoney = () => {
   insertBtn.addEventListener("click", () => {
-    const insertMoneyInput = document.querySelector(
-      ".insert-money-input"
-    ).value;
+    let insertMoneyInput = document.querySelector(".insert-money-input");
+    let insertMoneyValue = insertMoneyInput.value;
     const myMoney = Number(localStorage.getItem("money"));
 
-    if (!insertMoneyInput) {
+    if (!insertMoneyValue) {
       alert("입금액을 입력해주세요.");
       return false;
     } else {
-      if (myMoney < insertMoneyInput) {
+      if (myMoney < insertMoneyValue) {
         alert("소지금이 부족합니다.");
         return false;
       } else {
-        const totalLeftMoney = myMoney - insertMoneyInput;
+        const totalLeftMoney = myMoney - insertMoneyValue;
         localStorage.setItem("money", totalLeftMoney);
 
         const myMoneyNode = document.querySelector(".my-money").children[1];
         attachNode(myMoneyNode, makeKoreaUnit(totalLeftMoney));
 
-        leftMoneyChange(insertMoneyInput);
+        leftMoneyChange(insertMoneyValue);
+        insertMoneyInput.value = "";
         alert("입금이 완료되었습니다. 잔액과 소지금을 확인해주세요.");
       }
     }
