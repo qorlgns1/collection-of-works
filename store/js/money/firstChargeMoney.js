@@ -1,4 +1,4 @@
-import { makeKoreaUnit, attachNode } from "../text/changeText.js";
+import { makeKoreaUnit, attachNode } from "../common/changeText.js";
 
 export const firstVisitChargeMoney = () => {
   const myMoneyNode = document.querySelector(".my-money").children[1];
