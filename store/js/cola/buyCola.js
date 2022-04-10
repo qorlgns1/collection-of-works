@@ -1,5 +1,5 @@
 import { getMiniDisplay } from "../display/miniDisplay.js";
-import { getBigDisplay } from "../display/BigDisplay.js";
+import { getBigDisplay } from "../display/bigDisplay.js";
 import { getColaCount, getColaName } from "./checkCola.js";
 import { bigDisplayColaBtn } from "../component/colaButton.js";
 import { getLeftMoneyNode } from "../money/depositMoney.js";
